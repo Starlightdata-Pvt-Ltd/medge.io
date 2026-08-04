@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>medge.io | Coming Soon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Inter,sans-serif;
+    background:#040816;
+    color:#fff;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    min-height:100vh;
+}
+
+/* Animated Background */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+
+    radial-gradient(circle at 20% 20%,rgba(59,130,246,.25),transparent 30%),
+    radial-gradient(circle at 80% 30%,rgba(34,211,238,.20),transparent 30%),
+    radial-gradient(circle at 50% 80%,rgba(124,58,237,.20),transparent 35%);
+
+    filter:blur(80px);
+    animation:float 15s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+
+0%{transform:translateY(-40px);}
+100%{transform:translateY(40px);}
+}
+
+.grid{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    mask-image:linear-gradient(to bottom,black,transparent);
+
+    animation:gridMove 18s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+from{
+background-position:0 0;
+}
+
+to{
+background-position:45px 45px;
+}
+
+}
+
+.wrapper{
+
+position:relative;
+z-index:10;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+padding:40px;
+
+}
+
+.card{
+
+width:100%;
+max-width:980px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+padding:70px;
+
+box-shadow:
+0 0 40px rgba(59,130,246,.10),
+0 30px 80px rgba(0,0,0,.45);
+
+animation:fade .9s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+font-size:36px;
+font-weight:800;
+letter-spacing:-1px;
+
+margin-bottom:30px;
+
+}
+
+.logo span{
+
+color:#3B82F6;
+
+}
+
+.badge{
+
+display:inline-flex;
+align-items:center;
+gap:10px;
+
+padding:10px 18px;
+
+border-radius:100px;
+
+background:rgba(59,130,246,.12);
+
+border:1px solid rgba(59,130,246,.4);
+
+color:#93C5FD;
+
+font-size:14px;
+
+margin-bottom:30px;
+
+}
+
+h1{
+
+font-size:72px;
+line-height:1.05;
+
+margin-bottom:25px;
+
+font-weight:800;
+
+}
+
+.gradient{
+
+background:linear-gradient(
+90deg,
+#3B82F6,
+#22D3EE,
+#8B5CF6);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:gradient 6s ease infinite;
+
+}
+
+@keyframes gradient{
+
+0%{background-position:0%;}
+50%{background-position:100%;}
+100%{background-position:0%;}
+
+}
+
+.subtitle{
+
+max-width:720px;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#CBD5E1;
+
+margin-bottom:45px;
+
+}
+
+.launch{
+
+display:block;
+
+padding:18px 34px;
+
+background:linear-gradient(135deg,#2563EB,#0EA5E9);
+
+border-radius:18px;
+
+font-weight:700;
+
+font-size:22px;
+
+margin:0 auto 60px;
+
+text-align:center;
+
+box-shadow:0 10px 35px rgba(37,99,235,.35);
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:22px;
+
+margin-bottom:50px;
+
+}
+
+.feature{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:20px;
+
+transition:.35s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-8px);
+
+border-color:#3B82F6;
+
+box-shadow:0 20px 40px rgba(59,130,246,.18);
+
+}
+
+.icon{
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+.feature h3{
+
+font-size:20px;
+
+margin-bottom:12px;
+
+}
+
+.feature p{
+
+color:#94A3B8;
+
+line-height:1.6;
+
+}
+
+.footer{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+color:#94A3B8;
+
+font-size:14px;
+
+}
+
+.countdown{
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+@media(max-width:900px){
+
+.card{
+
+padding:45px 30px;
+
+}
+
+h1{
+
+font-size:48px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.footer{
+
+flex-direction:column;
+gap:15px;
+text-align:center;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<div class="wrapper">
+
+<div class="card">
+
+<div class="logo">
+medge<span>.io</span>
+</div>
+
+<div class="launch">
+
+Coming Soon 01 OCTOBER 2026
+
+</div>
+
+<h1>
+
+Building the Future of
+<span class="gradient">
+Cybersecurity.
+Automation.
+Artificial Intelligence.
+</span>
+
+</h1>
+
+<p class="subtitle">
+
+We're crafting a new generation of enterprise technology designed to
+secure, automate, and intelligently transform modern organizations.
+
+Something exceptional is coming.
+
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="icon">🛡️</div>
+
+<h3>Workplace Security</h3>
+
+<p>
+Enterprise-grade security solutions built to protect
+people, identities, applications, and infrastructure.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">⚡</div>
+
+<h3>Forensic Automation</h3>
+
+<p>
+Modern workflow automation that streamlines operations
+and accelerates business productivity.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">🤖</div>
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+AI-powered platforms that help businesses make smarter,
+faster, and data-driven decisions.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<div>
+
+<strong>medge.io</strong><br>
+
+Engineering the future of secure and intelligent enterprises.
+
+</div>
+
+<div class="countdown" id="countdown">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const target=new Date("October 1, 2026 00:00:00").getTime();
+
+const countdown=document.getElementById("countdown");
+
+function updateCountdown(){
+
+const now=new Date().getTime();
+
+const distance=target-now;
+
+if(distance<0){
+
+countdown.innerHTML="We're Live 🚀";
+
+return;
+
+}
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const mins=Math.floor((distance%(1000*60*60))/(1000*60));
+
+const secs=Math.floor((distance%(1000*60))/1000);
+
+countdown.innerHTML=
+`${days}d ${hours}h ${mins}m ${secs}s`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>
