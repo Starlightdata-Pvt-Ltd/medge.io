@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXMJCVYBWM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JXMJCVYBWM');
+</script>
 <title>medge.io | Coming Soon</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -214,6 +223,26 @@ animation:gradient 6s ease infinite;
 
 }
 
+.gradient{
+
+background:linear-gradient(
+90deg,
+#3B82F6,
+#22D3EE,
+#8B5CF6);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:gradient 6s ease infinite;
+
+font-size:42px;
+line-height:1.2;
+
+}
+
 .subtitle{
 
 max-width:720px;
@@ -232,21 +261,27 @@ margin-bottom:45px;
 
 display:block;
 
-padding:18px 34px;
+ width:fit-content;
 
-background:linear-gradient(135deg,#2563EB,#0EA5E9);
+ padding:18px 34px;
 
-border-radius:18px;
+ background:linear-gradient(135deg,#2563EB,#0EA5E9);
 
-font-weight:700;
+ border-radius:18px;
 
-font-size:22px;
+ font-weight:700;
 
-margin:0 auto 60px;
+ font-size:22px;
 
-text-align:center;
+ margin:0 auto 60px;
 
-box-shadow:0 10px 35px rgba(37,99,235,.35);
+ text-align:center;
+
+ white-space:nowrap;
+
+}
+
+transition:.35s;
 
 }
 
@@ -307,6 +342,12 @@ margin-bottom:12px;
 color:#94A3B8;
 
 line-height:1.6;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
 
 }
 
@@ -384,12 +425,12 @@ text-align:center;
 <div class="card">
 
 <div class="logo">
-medge<span>.io</span>
+mEDGE<span>.io</span>
 </div>
 
 <div class="launch">
 
-Coming Soon 01 OCTOBER 2026
+Coming Soon October 1, 2026
 
 </div>
 
@@ -397,8 +438,8 @@ Coming Soon 01 OCTOBER 2026
 
 Building the Future of
 <span class="gradient">
-Cybersecurity.
-Automation.
+Workplace Security.
+Forensic Automation.
 Artificial Intelligence.
 </span>
 
@@ -409,7 +450,6 @@ Artificial Intelligence.
 We're crafting a new generation of enterprise technology designed to
 secure, automate, and intelligently transform modern organizations.
 
-Something exceptional is coming.
 
 </p>
 
@@ -456,6 +496,7 @@ faster, and data-driven decisions.
 </div>
 
 </div>
+
 
 <div class="footer">
 
